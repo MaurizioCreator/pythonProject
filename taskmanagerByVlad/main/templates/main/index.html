@@ -1,0 +1,24 @@
+{% extends 'main/base.html'%}
+
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+    {% if tasks %}
+        <h1 style="margin-top: 5%">Your Tasks</h1>
+        {% for el in tasks %}
+            <div class="alert alert-warning mt-2" style="background-color: #212529; border:#212529; color: aliceblue"  >
+                <h3>{{ el.title }}</h3>
+                <p>{{ el.myTask }}</p>
+                <div style="position: center; margin-left: 94%">
+                    <a style="padding-top: 0" href="{% url 'Detail' el.id %}" class="btn btn-success">Read</a>
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+        <h1 style="margin-top: 5%">No Tasks</h1>
+    {% endif %}
+{% endblock %}
+

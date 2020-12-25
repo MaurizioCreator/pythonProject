@@ -1,0 +1,16 @@
+{% extends 'main/base.html'%}
+
+{% block title %}
+Edit Task
+{% endblock %}
+
+{% block content %}
+    <h1 style="margin-top: 5%">Edit Task</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.title }}<br>
+        {{ form.myTask }}<br>
+        <button type="submit" class="btn btn-warning" style="color: white">Edit Task</button>
+        <span>{{ error }}</span>
+    </form>
+{% endblock %}

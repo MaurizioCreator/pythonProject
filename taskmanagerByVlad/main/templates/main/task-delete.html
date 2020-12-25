@@ -1,0 +1,13 @@
+{% extends 'main/base.html'%}
+
+{% block title %}
+Delete Task
+{% endblock %}
+
+{% block content %}
+    <h1 style="margin-top: 5%">Are you sure want to delete Task - {{ task.title }} ?</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <button style="margin-top: 2%" type="submit" class="btn btn-danger">Delete Task</button>
+    </form>
+{% endblock %}
